@@ -1,7 +1,8 @@
 WindowsStandalone
 PlayerPath?
-C:/Projects/Games/Roll a Ball/Builds/Build1.exe
+D:/repositories/hackathon-2018.1-team44/Builds/game.exe
 SceneListBegin?
+Assets/_Scenes/Menu.unity
 Assets/_Scenes/MiniGame.unity
 SceneListEnd?
 9d4423546d9edf0abf6e9cb815e84d1d Assembly-CSharp.dll:.PlayerController
@@ -156,3 +157,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 b7f557c19cce3b6f593e26edfe1ec859 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.Ball
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotator
 8fe6cc33d16656c97727d189863a666b Assembly-CSharp.dll:.CellController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenuController
