@@ -53,14 +53,18 @@ public class LevelGenerator : MonoBehaviour
     //place items
     for (int i=0; i< MaxItemsPerLevel; ++i)
     {
-      int itemType = Random.Range(0, Items.Length);
+      
       int itemColumn = Random.Range(1, LevelWidth - 1);
       int itemRow = Random.Range(1, LevelHeight - 1);
       int cellType = _cellFields[itemColumn, itemRow];
 
       float offsetX = (itemColumn * CellOffset) - levelHalfWidth;
-      float offsetY = cellType * cellHeight + 1.0f;
+      float offsetY = cellType * cellHeight;
       float offsetZ = (itemRow * CellOffset) - levelHalfHeight;
+
+      int itemType = GetRandomItemType(cellHeight);
+      if (itemType == 0)
+        offsetY += 1.0f;      
       var itemPosition = new Vector3(offsetX, offsetY, offsetZ);
       PlaceItem(itemPosition, itemType);
     }
@@ -82,6 +86,22 @@ public class LevelGenerator : MonoBehaviour
     if (distanceToOrigin < CellOffset)
       cellType = 0;
     return cellType;
+  }
+
+  int GetRandomItemType(float cellHeight)
+  {
+    int itemTypeSelectValue = Random.Range(0, 100);
+    int itemType = 0;
+    if (itemTypeSelectValue > 60)
+      itemType = 1;
+    if (itemTypeSelectValue > 85)
+      itemType = 2;
+    if (itemTypeSelectValue > 95)
+      itemType = 3;
+
+    //if (distanceToOrigin < CellOffset)
+//      cellType = 0;
+    return itemType;
   }
 
   void PlaceCell(Vector3 position, int cellType, float falloutDelay)

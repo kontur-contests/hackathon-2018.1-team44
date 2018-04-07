@@ -156,3 +156,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 b7f557c19cce3b6f593e26edfe1ec859 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.Ball
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotator
 8fe6cc33d16656c97727d189863a666b Assembly-CSharp.dll:.CellController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MushroomController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GlobalLightController

@@ -6,17 +6,20 @@ public class CellController2 : MonoBehaviour
 {
   public float FalloutDelaySecs;
 
+  private float _falloutTime;
+
   private Rigidbody _rigidbody;
 
   public void Start()
   {
     _rigidbody = GetComponent<Rigidbody>();
     _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+    _falloutTime = Time.time + FalloutDelaySecs;
   }
 
   public void Update()
   {
-    if (Time.time > FalloutDelaySecs)
+    if (Time.time > _falloutTime)
     {
       _rigidbody.useGravity = true;
       _rigidbody.constraints = RigidbodyConstraints.None;

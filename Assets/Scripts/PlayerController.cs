@@ -24,6 +24,8 @@ public class PlayerController : BallUserControl
       OnStarCollided(other.gameObject);
     } else if (other.gameObject.CompareTag("ZeroLevel")) {
       OnZeroLevelCollided();
+    } else if (other.gameObject.CompareTag("Mushroom")) {
+      OnMushroomCollided(other.gameObject);
     }
   }
 
@@ -32,6 +34,13 @@ public class PlayerController : BallUserControl
     star.SetActive(false);
     _score += 1;
     ScoreText.text = string.Format("Score: {0}", _score);
+  }
+
+  private void OnMushroomCollided(GameObject mushroom)
+  {
+    mushroom.SetActive(false);
+    //_score += 1;
+    //ScoreText.text = string.Format("Score: {0}", _score);
   }
 
   private void OnZeroLevelCollided()
