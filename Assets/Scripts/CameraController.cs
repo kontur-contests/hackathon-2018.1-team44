@@ -6,15 +6,17 @@ public class CameraController : MonoBehaviour
 {
 
   public GameObject player;
+  public Vector3 Offset;
 
-  private Vector3 offset;
+  private Vector3 cameraTranslation;
 
 
   // Use this for initialization
   void Start()
   {
-    offset = transform.position - player.transform.position;
-    transform.position = player.transform.position + offset;
+    Offset = new Vector3(0.0f, 0.0f, 0.0f);
+    cameraTranslation = transform.position - player.transform.position;
+    transform.position = player.transform.position + cameraTranslation;
   }
 
   private void Update()
@@ -32,7 +34,7 @@ public class CameraController : MonoBehaviour
     //else if (Input.GetKey(KeyCode.S))
     //  pitch = -1.0f;
 
-    transform.position = player.transform.position + offset;
+    transform.position = player.transform.position + cameraTranslation + Offset;
     //transform.RotateAround(player.transform.position, new Vector3(pitch, yaw, 0.0f), 20 * Time.deltaTime * 8.0f);
     transform.LookAt(player.transform.position);
   }

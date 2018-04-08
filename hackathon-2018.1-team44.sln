@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hackathon-2018.1-team44", "hackathon-2018.1-team44.csproj", "{69FB2868-E68B-CA25-AB15-FAC338EDAD54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hackathon-2018.1-team44.Plugins", "hackathon-2018.1-team44.Plugins.csproj", "{6D1F9173-CFF7-0409-E16A-B15A174F8124}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69FB2868-E68B-CA25-AB15-FAC338EDAD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FB2868-E68B-CA25-AB15-FAC338EDAD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FB2868-E68B-CA25-AB15-FAC338EDAD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FB2868-E68B-CA25-AB15-FAC338EDAD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1F9173-CFF7-0409-E16A-B15A174F8124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1F9173-CFF7-0409-E16A-B15A174F8124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1F9173-CFF7-0409-E16A-B15A174F8124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1F9173-CFF7-0409-E16A-B15A174F8124}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

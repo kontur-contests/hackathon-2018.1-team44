@@ -16,8 +16,22 @@ public class LevelGenerator : MonoBehaviour
   // Use this for initialization
   void Start()
   {
+    if (RenderSettings.skybox.HasProperty("_Tint"))
+      RenderSettings.skybox.SetColor("_Tint", Color.gray);
+    else if (RenderSettings.skybox.HasProperty("_SkyTint"))
+      RenderSettings.skybox.SetColor("_SkyTint", Color.gray);
+    RenderSettings.ambientIntensity = 1.0f;
+
     _cellFields = new int[LevelWidth, LevelHeight];
     StartCoroutine(GenerateLevel());
+
+    var rain = GameObject.Find("RainPlane");
+    rain.SetActive(true);
+  }
+
+  public void SpawnStar(Vector3 position)
+  {
+    PlaceItem(position, 0);
   }
 
   IEnumerator GenerateLevel()
@@ -92,9 +106,9 @@ public class LevelGenerator : MonoBehaviour
   {
     int itemTypeSelectValue = Random.Range(0, 100);
     int itemType = 0;
-    if (itemTypeSelectValue > 60)
+    if (itemTypeSelectValue > 80)
       itemType = 1;
-    if (itemTypeSelectValue > 85)
+    if (itemTypeSelectValue > 87)
       itemType = 2;
     if (itemTypeSelectValue > 95)
       itemType = 3;
@@ -114,6 +128,9 @@ public class LevelGenerator : MonoBehaviour
   void PlaceItem(Vector3 position, int itemType)
   {
     GameObject cellObject = Instantiate(Items[itemType], position, Quaternion.identity);
-    cellObject.tag = "Star";
+    if (itemType == 0)
+      cellObject.tag = "Star";
+    else
+      cellObject.tag = "Mushroom";
   }
 }

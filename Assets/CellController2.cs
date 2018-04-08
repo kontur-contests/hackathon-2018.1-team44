@@ -9,12 +9,16 @@ public class CellController2 : MonoBehaviour
   private float _falloutTime;
 
   private Rigidbody _rigidbody;
+  private WorldController _world;
 
   public void Start()
   {
     _rigidbody = GetComponent<Rigidbody>();
     _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
     _falloutTime = Time.time + FalloutDelaySecs;
+
+    var worldObject = GameObject.Find("World");
+    _world = worldObject.GetComponent<WorldController>();
   }
 
   public void Update()
@@ -30,6 +34,7 @@ public class CellController2 : MonoBehaviour
   {
     if (other.gameObject.CompareTag("ZeroLevel"))
     {
+      _world.CellCount -= 1;
       gameObject.SetActive(false);
     }
   }

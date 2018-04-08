@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MushroomController : MonoBehaviour
 {
+  public int Power;
+
   private void OnTriggerEnter(Collider other)
   {
     if (other.gameObject.CompareTag("ZeroLevel"))
